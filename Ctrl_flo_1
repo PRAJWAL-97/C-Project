@@ -1,0 +1,63 @@
+//pract 1
+printf("Enter the grade : ");
+char grade;
+scanf(" %c", &grade);
+
+switch (grade)
+{
+case 'a':
+case 'A':
+printf("90 and above");
+break;
+case 'b':
+case 'B':
+printf("80 to 89");
+break;
+case 'c':
+case 'C':
+printf("rest to 80");
+break;
+default:
+printf("hmmm");
+}
+
+
+//pract 2
+#include <stdio.h>
+int main()
+{
+    int choice;
+    int total = 0;
+
+    printf("Press 1 if you want to enter a value, press 0 if you want result\n");
+    scanf("%d", &choice);
+
+    if (choice == 1)
+    {
+        int hour, minutes;
+
+        while (choice == 1)
+        {
+            printf("Enter hours and minutes:\n");
+            scanf("%d %d", &hour, &minutes);
+
+            hour = hour * 60;
+            total = total + (minutes + hour);
+
+            printf("Press 1 to add more, press 0 to end\n");
+            scanf("%d", &choice);
+        }
+
+        int finalHour, finalMinute;
+        finalHour = total / 60;
+        finalMinute = total % 60;
+
+        printf("Total time required is: %d hrs and %d minutes\n", finalHour, finalMinute);
+    }
+    else
+    {
+        printf("Hmm\n");
+    }
+
+    return 0;
+}
